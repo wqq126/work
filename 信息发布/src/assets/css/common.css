@@ -1,0 +1,183 @@
+/*分页工具条*/
+.el-pagination.is-background .el-pager li:not(.disabled).active {
+    background-color: #18abbb;
+    color: #fff;
+    border-radius: 50%;
+    box-shadow: rgb(198, 198, 198) 0px 3px 3px;
+}
+.el-pagination.is-background .btn-next, 
+.el-pagination.is-background .btn-prev, 
+.el-pagination.is-background .el-pager li {
+  background-color: #FFFFFF;
+    
+}
+.el-select-dropdown__item.selected {
+    color: #18abbb;
+    font-weight: 700;
+}
+
+/*.el-select .el-input.is-focus .el-input__inner {
+    border-color: #18abbb;
+}*/
+  /*表格字体*/
+ .el-table { 
+    font-size: 1em;    
+}
+.el-table th div, .el-table th>.cell {
+	  font-size: 1.25em ;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;    
+    letter-spacing: 0px;
+    color: #3a3a3a ;
+}
+.el-table .cell{
+	font-size: 1.125em ;
+	color: #6f6f6f ;
+	white-space: nowrap;
+  text-overflow: ellipsis;
+}
+/*.el-table td, .el-table th {
+	padding: 0.5em 0 !important;
+}*/
+
+/*button&input*/
+.mybtn-primary {
+	border: none !important;
+	border-radius: 0.3em !important;
+	color: white !important;
+	background-color: #18abbb !important;
+	padding: 0 1em !important;
+	margin: 0 10px !important;
+	height: 2em !important;
+	min-width:7em !important;
+	line-height: 2em !important;
+	font-size: 1em !important;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1) !important;
+	
+}
+.mybtn-primary:hover{
+	background-color: #23b9c1 !important;
+}
+.mybtn-primary:active{
+	background-color: #04a1a5 !important;
+}
+.my-input{
+	outline: none;
+    border: 1px solid #e4e7ed;
+    border-radius: 0.4em;
+    height: 2.25em;
+    text-indent: 12px;
+    width: 15.625em;
+}
+/*checkbox*/
+.el-checkbox__inner {
+    display: inline-block ;
+    position: relative;
+    border: 1px solid #dcdfe6;
+    border-radius: 2px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 1.25em;
+    height: 1.25em;
+    background-color: #fff;
+    z-index: 1;
+    -webkit-transition: border-color .25s cubic-bezier(.71,-.46,.29,1.46),background-color .25s cubic-bezier(.71,-.46,.29,1.46);
+    transition: border-color .25s cubic-bezier(.71,-.46,.29,1.46),background-color .25s cubic-bezier(.71,-.46,.29,1.46);
+}
+
+.el-checkbox__input.is-checked .el-checkbox__inner, .el-checkbox__input.is-indeterminate .el-checkbox__inner {
+    background-color: #FFFFFF; 
+    border-color: #dcdfe6; 
+}
+.el-checkbox__inner:hover {
+    border-color: #18abbb;
+}
+.el-checkbox__inner::after {
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    content: "";
+    border: 2px solid #18abbb;
+    border-left: 0;
+    border-top: 0;
+    height: 10px;
+    left: 5px;
+    position: absolute;
+    top: 1px;
+    -webkit-transform: rotate(45deg) scaleY(0);
+    transform: rotate(45deg) scaleY(0);
+    width: 5px;
+    -webkit-transition: -webkit-transform .15s ease-in .05s;
+    transition: -webkit-transform .15s ease-in .05s;
+    transition: transform .15s ease-in .05s;
+    transition: transform .15s ease-in .05s, -webkit-transform .15s ease-in .05s;
+    transition: transform .15s ease-in .05s,-webkit-transform .15s ease-in .05s;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+}
+.el-table .descending .sort-caret.descending {
+    border-top-color: #18ABBB;
+}
+.el-table .ascending .sort-caret.ascending {
+    border-bottom-color: #18ABBB;
+}
+/*日期选择器*/
+.el-date-editor .el-input__inner{
+	  outline: none;
+    border: 1px solid #e4e7ed;
+    border-radius: 0.4em;
+    height: 2.25em;
+    text-indent: 12px;
+    width: 15.625em;
+    background: url(../../../static/images/date-icoin.png) no-repeat right 10px center !important;
+    text-indent: 1em ;
+}
+/*基本设置--时间选择器*/
+.time-select .el-input__inner{
+	  outline: none;
+    border: 1px solid #e4e7ed;
+    border-radius: 0.4em;
+    height: 2.25em;
+    text-indent: 12px;
+    width: 10em;
+    background: url(../../../static/images/down.png) no-repeat right 10px center !important;
+    text-indent: 0.5em ;
+    padding-left: 10px;
+}
+
+
+/*下拉输入*/
+.el-input--suffix .el-input__inner {
+    height: 2.25em;
+}
+.el-select .el-input__inner:focus {
+    border-color: none !important;
+}
+
+.el-select .el-input.is-focus .el-input__inner {
+    border-color: none !important;
+}
+.el-select .el-input__inner {
+    border-color: none !important;
+    background: url(../../../static/images/down.png) no-repeat right 10px center !important;
+}
+/**/
+.el-dialog__title {
+    line-height: 24px;
+    font-size: 1.25em;
+    font-weight: 600;
+    color: #18ABBB !important;
+}
+/*上传*/
+.el-upload {
+ 	width: 80% !important;
+ }
+
+/**
+ * 表单必填样式，在 el-form-item 标签上加上 required样式
+ */
+.required label.el-form-item__label:before{
+	content: url(../../../static/images/importent.png) !important;
+	margin-right: 0.5em !important;
+}
+

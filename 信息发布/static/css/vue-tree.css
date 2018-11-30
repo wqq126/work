@@ -1,0 +1,44 @@
+.vue-tree-list {
+  list-style-type: none;
+  padding-left: 20px
+}
+.vue-tree-list .item-wrapper {
+  padding: 5px 0;
+  height: 100%;
+  line-height: 100%;
+}
+.vue-tree-list .item-bold {
+  /*font-weight: bold*/
+}
+.vue-tree-list .item-toggle,
+.vue-tree-list .item-checkbox,
+.vue-tree-list .item-label {
+  cursor: pointer;
+  position: relative;
+}
+.vue-tree-list .item-label{
+  top: -2px;
+}
+.vue-tree-list .item-toggle {
+  display: inline-block;
+  text-align: center;
+}
+.item-checkbox{
+  color: #18abbb;
+}
+
+
+.vue-tree-list .item-checkbox{
+  font-size: 20px;
+}
+.openCloseBtn .icon-minus{
+  font-size: 17px;
+  position: relative;
+  top: -1px;
+}
+.openCloseBtn .icon-plus{
+  font-size: 15px;
+  position: relative;
+  top: -1px;
+}
+

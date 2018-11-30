@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+		<title>preview</title>
+		<link rel="stylesheet" type="text/css" href="html-preview.css" />
+		<script src="./ckplayerX/ckplayer.js" type="text/javascript" charset="utf-8"></script>
+
+    <link rel="stylesheet" href="./video/video.css">
+    <!--<link href="http://vjs.zencdn.net/5.5.3/video-js.css" rel="stylesheet">-->
+    <!-- If you'd like to support IE8 -->
+    <!--<script src="http://vjs.zencdn.net/ie8/1.1.1/videojs-ie8.min.js"></script>-->
+    <!-- <script src="video/video-ie8.js"></script> -->
+    <!--<script src="http://vjs.zencdn.net/5.5.3/video.js"></script>-->
+    <!-- <script src="video/video.js"></script> -->
+    <script type="text/JavaScript" src="html5Preloader.js"></script>
+		<script type="text/JavaScript" src="html-preview.js"></script>
+		<script src="jquery-1.9.1.js" type="text/javascript" charset="utf-8"></script>
+		<!--<script type="text/JavaScript" src="jquery-1.9.1.js"></script>-->
+	</head>
+
+	<body>
+		<div id="player">
+			<div id="info"></div>
+			<div id="log"></div>
+			<div id="screen">
+				<div id="splash">
+					<div id="loader"></div>
+					<div id="loaderCaption">
+						<p>
+
+							"Loading layout..."
+						</p>
+					</div>
+				</div>
+				<div id="end">
+					<a href="javascript:history.go(0)" style="text-decoration: none; color: #ffffff">' Play again?
+					</a>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>
+		$(function() {
+			var layoutId = getQueryString('layoutid');
+			dsInit(layoutId);
+			// $('body').on('load',function () {
+			//     console.log('sssssss')
+			//     dsInit(607)
+			// })
+			function getQueryString(name) {
+				var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+				var r = window.location.search.substr(1).match(reg);
+				if(r != null) return unescape(r[2]);
+				return null;
+			}
+		})
+	</script>
+
+</html>
