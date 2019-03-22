@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		/**
+		 * 当函数可以记住并访问所在的词法作用域时就产生了闭包
+		 * 作用域分为词法作用域和动态作用域
+		 * 词法作用域是被普遍使用的
+		 * 
+		 */
+		function foo(){
+			var a = 2;
+			function bar(){
+				console.log(a)
+			}
+			bar();
+		}
+		foo();
+	</script>
+</html>
