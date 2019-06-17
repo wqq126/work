@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link href="jquery-ui.css" rel="stylesheet">
+		<style type="text/css">
+			html,body{
+				margin: 0;
+				padding: 0;
+			}
+			#aaa {
+				position: fixed;
+				background-color: blue;
+				height: 150px;
+				width: 150px;
+			}
+
+			#bbb {
+				position: fixed;
+				background-color: green;
+				height: 150px;
+				width: 150px;
+				top: 200px;
+				left: 400px;
+			}
+
+			#mm,
+			#nn {
+				position: absolute;
+				display: none;
+			}
+			.d{
+				width: 150px;
+				height: 150px;
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="mm" style="border-color: red; border-bottom-style: dashed; width: 100%; border-bottom-width: 1px;"></div>
+		<div id="nn" style="border-color: red; border-left-style: dashed; width; 1 px; border-left-width: 1px;"></div>
+		<div id="aaa" class="d">
+			Drag me around
+		</div>
+		<div id="bbb" class="d">
+			align me around
+		</div>
+		<div class="d"></div>
+	</body>
+	<script src="external/jquery/jquery.js"></script>
+	<script src="jquery-ui.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			var hh = $(document).height(); //获取页面容器的高度；
+			//alert(hh);
+			$('.d').draggable({
+				drag: function(event, ui) {
+					var x = ui.offset.left;
+					var y = ui.offset.top;
+					$('#mm').css("top", y);
+					$('#nn').css("height", hh);
+					$('#nn').css("left", x);
+					$('#mm').css("display", "block");
+					$('#nn').css("display", "block");
+				},
+				stop: function(event, ui) {
+					$('#mm').css("display", "none");
+					$('#nn').css("display", "none");
+					var target = event.target;
+					var siblingsArr = $(event.target).siblings('.d');
+					for (var i = 0; i < siblingsArr.length; i++) {
+						var result = dian(target, siblingsArr[i]);
+						if (result.change) {
+							$(target).css({
+								'left': result.offsetLeft,
+								'top': result.offsetTop
+							});
+						}
+					}
+
+
+				}
+
+			})
+			//求两点之间的距离
+			function dian(obj1, obj2) {
+				var offsetLeft1 = obj1.offsetLeft;
+				var offsetTop1 = obj1.offsetTop;
+				var distance = 5;
+				var offsetLeft2 = obj2.offsetLeft;
+				var offsetTop2 = obj2.offsetTop;
+				var result = {
+					offsetLeft: offsetLeft1,
+					offsetTop: offsetTop1,
+					change: false
+				};
+				if (offsetLeft1 > offsetLeft2) {
+					if ((offsetLeft1 - offsetLeft2 - obj2.offsetWidth) > 0 && (offsetLeft1 - offsetLeft2 - obj2.offsetWidth) <
+						distance) {
+						result.offsetLeft = offsetLeft2 + obj2.offsetWidth;
+						result.change = true;
+					}
+				} else {
+					if ((offsetLeft2 - offsetLeft1 - obj1.offsetWidth) > 0 && (offsetLeft2 - offsetLeft1 - obj1.offsetWidth) <
+						distance) {
+						result.offsetLeft = offsetLeft2 - obj1.offsetWidth;
+						result.change = true;
+					}
+				}
+
+				if (offsetTop1 > offsetTop2) {
+					if ((offsetTop1 - offsetTop2 - obj2.offsetHeight) > 0 && (offsetTop1 - offsetTop2 - obj2.offsetHeight) <
+						distance) {
+						result.offsetTop = offsetTop2 + obj2.offsetHeight;
+						result.change = true;
+					}
+				} else {
+					if ((offsetTop2 - offsetTop1 - obj1.offsetHeight) > 0 && offsetTop2 - offsetTop1 - obj1.offsetHeight < distance) {
+						result.offsetTop = offsetTop2 - obj1.offsetHeight;
+						result.change = true;
+					}
+				}
+
+				return result;
+				// if(obj1.offsetLeft - obj2.offsetLeft < 50){
+				// 	return true;
+				// }else if(obj1.offsetTop - obj2.offsetTop < 50){
+				// 	return true;
+				// }else if(obj1.offsetRight - obj2.offsetRight < 50){
+				// 	return true;
+				// } else if(obj1.offsetBottom - obj2.offsetBottom < 50){
+				// 	return tue;
+				// }else{
+				// 	return false;
+				// }		
+				// var a = (obj1.offsetLeft + obj1.offsetWidth / 2) - (obj2.offsetLeft + obj2.offsetWidth / 2);
+				// var b = (obj1.offsetTop + obj1.offsetHeight / 2) - (obj2.offsetTop + obj2.offsetHeight / 2);
+				// console.log(a)
+				// console.log(b)
+				// return Math.sqrt(a * a + b * b);
+
+			}
+		})
+	</script>
+</html>
