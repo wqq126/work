@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		function foo(){
+			// "use strict"
+			//严格模式下 this 无法默认绑定 window this会指向undefined
+			console.log(this.a)
+		}
+		var a = 2;
+		foo();
+		//this 默认指向 window
+	</script>
+</html>

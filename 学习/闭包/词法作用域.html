@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		/**
+		 * 当函数可以记住并访问所在的词法作用域时就产生了闭包
+		 * 作用域分为词法作用域和动态作用域
+		 * 词法作用域是被普遍使用的
+		 * 词法阶段
+		 * 大部分标准语言编辑器的第一个工作阶段叫作词法化，词法化的过程会对源代码的字符进行检查，如果是有状态的
+		 * 解析过程，还会赋予单词意义。
+		 * 简单来说，词法作用域就是定义在次法阶段的作用域。换句话说，词法作用域就是
+		 * 由你在写代码时将变量和块作用域写在哪里来决定的。
+		 */
+
+// 		for(var i=0;i<=5;i++){
+// 			setTimeout(function(){
+// 				console.log(i)
+// 			},i*1000)
+// 		}
+		/**
+		 * 上述循环会每1秒输出 6
+		 * 延迟函数的回调会在循环结束时执行
+		 * 
+		 */
+		for(var i=0;i<=5;i++){
+			(function(j){
+				setTimeout(function(){
+					console.log(j)
+				},j*1000)
+			})(i)
+		}
+		//输出0，1,2,3,4,5
+	</script>
+</html>

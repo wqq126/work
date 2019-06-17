@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function foo(){
+				console.log(this.a)
+			}
+			var obj = {
+				a:2,
+				foo:foo
+			}
+			obj.foo();
+			/**
+			 * 无论是直接在obj中定义 还是先定义再添加为引用属性
+			 * 这个函数严格说都不属于obj
+			 * 
+			 */
+		</script>
+	</body>
+</html>
