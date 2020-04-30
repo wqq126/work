@@ -12,7 +12,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "element-ui": "^2.4.2",
-    "jquery": "^1.9.1",
+    "jquery": "^3.5.0",
     "vue": "^2.5.2",
     "vue-photo-preview": "^1.0.9",
     "vue-router": "^3.0.1",
